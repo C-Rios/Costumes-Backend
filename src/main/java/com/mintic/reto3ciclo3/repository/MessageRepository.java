@@ -1,6 +1,6 @@
 package com.mintic.reto3ciclo3.repository;
 
-import com.mintic.reto3ciclo3.model.Messages;
+import com.mintic.reto3ciclo3.model.Message;
 import com.mintic.reto3ciclo3.repository.repositories.MessagesCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,19 +13,19 @@ public class MessageRepository {
     @Autowired
     private MessagesCrudRepository messagesCrudRepository;
 
-    public List<Messages> getMessages(){
-        return (List<Messages>) messagesCrudRepository.findAll();
+    public List<Message> getMessages(){
+        return (List<Message>) messagesCrudRepository.findAll();
     }
 
-    public Optional<Messages> getMessage(int id){
+    public Optional<Message> getMessage(int id){
         return messagesCrudRepository.findById(id);
     }
 
-    public Messages save(Messages messages){
-        return messagesCrudRepository.save(messages);
+    public Message save(Message message){
+        return messagesCrudRepository.save(message);
     }
 
-    public void delete(Messages messages){
-        messagesCrudRepository.delete(messages);
+    public void delete(Message message){
+        messagesCrudRepository.delete(message);
     }
 }

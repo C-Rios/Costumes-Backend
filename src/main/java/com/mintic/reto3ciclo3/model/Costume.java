@@ -25,17 +25,17 @@ public class Costume implements Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "costume")
     @JsonIgnoreProperties({"costume", "client"})
-    private List<Messages> messages;
+    private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "costume")
     @JsonIgnoreProperties({"costume","messages"})
     private List<Reservation> reservations;
 
-    public List<Messages> getMessages() {
+    public List<Message> getMessages() {
         return messages;
     }
 
-    public void setMessages(List<Messages> messages) {
+    public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
 
